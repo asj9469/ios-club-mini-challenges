@@ -47,7 +47,7 @@ func mySeatingArrangement (neighbors: (([String])->())){
 
 mySeatingArrangement(neighbors: { (names: [String]) -> () in
     //using map
-    print("I sit next to", names.map{ $0 }.joined(separator: " and "))
+    print("I sit next to", names.map{$0}.joined(separator: " and "))
     
     //OR use a for loop
     var output: String = "I sit next to "
@@ -63,4 +63,21 @@ mySeatingArrangement(neighbors: { (names: [String]) -> () in
     print(output)
 })
 
-//
+//MINI CHALLENGE 3
+let range = 0..<30
+
+var fibonacciSequence = range.map({(number: Int) -> Int in
+    
+    var first = 0
+    var second = 1
+    
+    for _ in 0..<number {
+        let prev = first
+        first = second
+        second = prev + first
+    }
+    
+    return first
+})
+
+print(fibonacciSequence)
